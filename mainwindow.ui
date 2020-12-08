@@ -278,9 +278,16 @@
     </property>
     <addaction name="actionGrafo"/>
    </widget>
+   <widget class="QMenu" name="menuAlgoritmos">
+    <property name="title">
+     <string>Algoritmos</string>
+    </property>
+    <addaction name="actionRecorrido_en_Profundidad_Amplitud"/>
+   </widget>
    <addaction name="menuArchivo"/>
    <addaction name="menuOrdenar"/>
    <addaction name="menuVer"/>
+   <addaction name="menuAlgoritmos"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAbrir">
@@ -320,6 +327,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionRecorrido_en_Profundidad_Amplitud">
+   <property name="text">
+    <string>Recorrido en Profundidad/Amplitud</string>
    </property>
   </action>
  </widget>
