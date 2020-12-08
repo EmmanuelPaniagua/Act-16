@@ -282,7 +282,8 @@
     <property name="title">
      <string>Algoritmos</string>
     </property>
-    <addaction name="actionRecorrido"/>
+    <addaction name="actionProfundidad"/>
+    <addaction name="actionAmplitud"/>
    </widget>
    <addaction name="menuArchivo"/>
    <addaction name="menuOrdenar"/>
@@ -332,6 +333,16 @@
   <action name="actionRecorrido">
    <property name="text">
     <string>Recorrido en Profundidad/Amplitud</string>
+   </property>
+  </action>
+  <action name="actionProfundidad">
+   <property name="text">
+    <string>Recorrido en Profundidad</string>
+   </property>
+  </action>
+  <action name="actionAmplitud">
+   <property name="text">
+    <string>Recorrido en Amplitud</string>
    </property>
   </action>
  </widget>
