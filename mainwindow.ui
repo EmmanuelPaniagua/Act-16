@@ -282,7 +282,7 @@
     <property name="title">
      <string>Algoritmos</string>
     </property>
-    <addaction name="actionRecorrido_en_Profundidad_Amplitud"/>
+    <addaction name="actionRecorrido"/>
    </widget>
    <addaction name="menuArchivo"/>
    <addaction name="menuOrdenar"/>
@@ -329,7 +329,7 @@
     <string>Ctrl+G</string>
    </property>
   </action>
-  <action name="actionRecorrido_en_Profundidad_Amplitud">
+  <action name="actionRecorrido">
    <property name="text">
     <string>Recorrido en Profundidad/Amplitud</string>
    </property>
