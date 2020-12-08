@@ -30,6 +30,8 @@ class Ui_MainWindow(object):
         self.actionVelocidad_ascendente.setObjectName(u"actionVelocidad_ascendente")
         self.actionGrafo = QAction(MainWindow)
         self.actionGrafo.setObjectName(u"actionGrafo")
+        self.actionRecorrido_en_Profundidad_Amplitud = QAction(MainWindow)
+        self.actionRecorrido_en_Profundidad_Amplitud.setObjectName(u"actionRecorrido_en_Profundidad_Amplitud")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
@@ -224,6 +226,8 @@ class Ui_MainWindow(object):
         self.menuOrdenar.setObjectName(u"menuOrdenar")
         self.menuVer = QMenu(self.menubar)
         self.menuVer.setObjectName(u"menuVer")
+        self.menuAlgoritmos = QMenu(self.menubar)
+        self.menuAlgoritmos.setObjectName(u"menuAlgoritmos")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -232,12 +236,14 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuArchivo.menuAction())
         self.menubar.addAction(self.menuOrdenar.menuAction())
         self.menubar.addAction(self.menuVer.menuAction())
+        self.menubar.addAction(self.menuAlgoritmos.menuAction())
         self.menuArchivo.addAction(self.actionAbrir)
         self.menuArchivo.addAction(self.actionGuardar)
         self.menuOrdenar.addAction(self.actionId_ascendente)
         self.menuOrdenar.addAction(self.actionDistancia_descendente)
         self.menuOrdenar.addAction(self.actionVelocidad_ascendente)
         self.menuVer.addAction(self.actionGrafo)
+        self.menuAlgoritmos.addAction(self.actionRecorrido_en_Profundidad_Amplitud)
 
         self.retranslateUi(MainWindow)
 
@@ -264,6 +270,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(shortcut)
         self.actionGrafo.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+G", None))
 #endif // QT_CONFIG(shortcut)
+        self.actionRecorrido_en_Profundidad_Amplitud.setText(QCoreApplication.translate("MainWindow", u"Recorrido en Profundidad/Amplitud", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Datos", None))
         self.mostrar_pushButton.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"id:", None))
@@ -289,5 +296,6 @@ class Ui_MainWindow(object):
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
         self.menuOrdenar.setTitle(QCoreApplication.translate("MainWindow", u"Ordenar", None))
         self.menuVer.setTitle(QCoreApplication.translate("MainWindow", u"Ver", None))
+        self.menuAlgoritmos.setTitle(QCoreApplication.translate("MainWindow", u"Algoritmos", None))
     # retranslateUi
 
