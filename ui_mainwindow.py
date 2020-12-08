@@ -30,8 +30,8 @@ class Ui_MainWindow(object):
         self.actionVelocidad_ascendente.setObjectName(u"actionVelocidad_ascendente")
         self.actionGrafo = QAction(MainWindow)
         self.actionGrafo.setObjectName(u"actionGrafo")
-        self.actionRecorrido_en_Profundidad_Amplitud = QAction(MainWindow)
-        self.actionRecorrido_en_Profundidad_Amplitud.setObjectName(u"actionRecorrido_en_Profundidad_Amplitud")
+        self.actionRecorrido = QAction(MainWindow)
+        self.actionRecorrido.setObjectName(u"actionRecorrido")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
@@ -243,7 +243,7 @@ class Ui_MainWindow(object):
         self.menuOrdenar.addAction(self.actionDistancia_descendente)
         self.menuOrdenar.addAction(self.actionVelocidad_ascendente)
         self.menuVer.addAction(self.actionGrafo)
-        self.menuAlgoritmos.addAction(self.actionRecorrido_en_Profundidad_Amplitud)
+        self.menuAlgoritmos.addAction(self.actionRecorrido)
 
         self.retranslateUi(MainWindow)
 
@@ -270,7 +270,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(shortcut)
         self.actionGrafo.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+G", None))
 #endif // QT_CONFIG(shortcut)
-        self.actionRecorrido_en_Profundidad_Amplitud.setText(QCoreApplication.translate("MainWindow", u"Recorrido en Profundidad/Amplitud", None))
+        self.actionRecorrido.setText(QCoreApplication.translate("MainWindow", u"Recorrido en Profundidad/Amplitud", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Datos", None))
         self.mostrar_pushButton.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"id:", None))
