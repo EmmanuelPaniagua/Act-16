@@ -32,11 +32,23 @@ class MainWindow(QMainWindow):
 
         self.ui.actionGrafo.triggered.connect(self.action_crear_grafo)
 
+        self.ui.actionAmplitud.triggered.connect(self.recorrido_amplitud)
+        self.ui.actionProfundidad.triggered.connect(self.recorrido_profundidad)
+
     def wheelEvent(self, event):
         if event.delta() > 0:
             self.ui.graphicsView.scale(1.2, 1.2)
         else:
             self.ui.graphicsView.scale(0.8, 0.8)
+
+    @Slot()
+    def recorrido_amplitud(self):
+        print ('amplitud')
+
+    @Slot()
+    def recorrido_profundidad(self):
+        print ('profundidad')
+
     @Slot()
     def action_crear_grafo(self):
         self.ui.salida.clear()
