@@ -2,6 +2,7 @@ from .particula import Particula
 import json 
 from pprint import pprint
 from pprint import pformat
+from collections import deque
 
 class Administrador:
     def __init__(self):
@@ -97,6 +98,31 @@ class Administrador:
                     if not i[0] in visitados:
                         visitados.append(i[0])
                         pila.append(i[0])
+            return recorrido
+        else:
+            return 0
+
+    def amplitud(self, grafo, origen_x=0, origen_y=0):
+        self.dictionary(grafo)
+        key = (origen_x, origen_y)
+
+        if key in grafo:
+            cola = deque()
+            visitados = []
+            recorrido = []
+
+            cola.appendleft(key)
+            visitados.append(key)
+
+            while len(cola) > 0:
+                vertice = cola[-1]
+                recorrido.append(vertice)
+                cola.pop()
+                adyacente = grafo[vertice]
+                for i in adyacente:
+                    if not i[0] in visitados:
+                        visitados.append(i[0])
+                        cola.appendleft(i[0])
             return recorrido
         else:
             return 0
