@@ -4,6 +4,7 @@ from ui_mainwindow import Ui_MainWindow
 from Libreria_Part.administrador import Administrador
 from Libreria_Part.particula import Particula
 from PySide2.QtGui import QPen, QColor, QTransform
+import os 
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -35,6 +36,8 @@ class MainWindow(QMainWindow):
         self.ui.actionAmplitud.triggered.connect(self.recorrido_amplitud)
         self.ui.actionProfundidad.triggered.connect(self.recorrido_profundidad)
 
+        self.grafo = {}
+
     def wheelEvent(self, event):
         if event.delta() > 0:
             self.ui.graphicsView.scale(1.2, 1.2)
@@ -47,12 +50,27 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def recorrido_profundidad(self):
-        print ('profundidad')
+        origen_x = self.ui.origen_x_spinBox.value()
+        origen_y = self.ui.origen_y_spinBox.value()
+        if not self.administrador.profundidad(self.grafo, origen_x, origen_y):
+            QMessageBox.warning(
+                self,
+                "Aviso",
+                "No es posible leer los valores"
+            )
+        else:
+            os.system("cls")
+            profundidad = self.administrador.profundidad(self.grafo, origen_x, origen_y)
+            print("Profundidad: ")
+            for i in profundidad:
+                print(i)
 
     @Slot()
     def action_crear_grafo(self):
         self.ui.salida.clear()
-        self.ui.salida.insertPlainText(self.administrador.dictionary())
+        self.grafo.clear()
+        grafo = self.administrador.dictionary(self.grafo)
+        self.ui.salida.insertPlainText(grafo)
 
     @Slot()
     def action_ordenar_id(self):
