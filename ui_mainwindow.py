@@ -43,10 +43,9 @@ class Ui_MainWindow(object):
         self.tabWidget.setGeometry(QRect(20, 19, 601, 461))
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
-        self.gridLayout_2 = QGridLayout(self.tab)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.groupBox = QGroupBox(self.tab)
         self.groupBox.setObjectName(u"groupBox")
+        self.groupBox.setGeometry(QRect(9, 9, 221, 411))
         self.gridLayout = QGridLayout(self.groupBox)
         self.gridLayout.setObjectName(u"gridLayout")
         self.mostrar_pushButton = QPushButton(self.groupBox)
@@ -166,14 +165,9 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.destino_y_spinBox, 4, 2, 1, 1)
 
-
-        self.gridLayout_2.addWidget(self.groupBox, 0, 0, 1, 1)
-
         self.salida = QPlainTextEdit(self.tab)
         self.salida.setObjectName(u"salida")
-
-        self.gridLayout_2.addWidget(self.salida, 0, 1, 1, 1)
-
+        self.salida.setGeometry(QRect(266, 9, 321, 411))
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
