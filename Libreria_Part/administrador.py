@@ -58,21 +58,45 @@ class Administrador:
         except:
             return 0
 
-    def dictionary(self):
-        dictionary = dict()
+    def dictionary(self,grafo):
 
         for particula in self.__particulas:
-            key = particula.origen_x, particula.origen_y 
-            value = particula.destino_x, particula.destino_y, particula.distancia
-            key_2 = particula.destino_x, particula.destino_y
-            value_2 = particula.origen_x, particula.origen_y, particula.distancia
-            if key in dictionary:
-                dictionary[key].append(value)
+            key = (particula.origen_x, particula.origen_y) 
+            value = ((particula.destino_x, particula.destino_y), particula.distancia)
+            key_2 = (particula.destino_x, particula.destino_y)
+            value_2 = ((particula.origen_x, particula.origen_y), particula.distancia)
+            if key in grafo:
+                grafo[key].append(value)
             else:
-                dictionary[key] = [value]
-            if key_2 in dictionary:
-                dictionary[key_2].append(value_2)
+                grafo[key] = [value]
+            if key_2 in grafo:
+                grafo[key_2].append(value_2)
             else:
-                dictionary[key_2] = [value_2]
-        str = pformat(dictionary, width=40, indent=1)
+                grafo[key_2] = [value_2]
+        str = pformat(grafo, width=60, indent=2)
         return str
+
+    def profundidad(self, grafo, origen_x=0, origen_y=0):
+        self.dictionary(grafo)
+        key = (origen_x, origen_y)
+
+        if key in grafo:
+            pila = []
+            visitados = []
+            recorrido = []
+
+            pila.append(key)
+            visitados.append(key)
+
+            while len(pila) > 0:
+                vertice = pila[-1]
+                recorrido.append(vertice)
+                pila.pop()
+                adyacente = grafo[vertice]
+                for i in adyacente:
+                    if not i[0] in visitados:
+                        visitados.append(i[0])
+                        pila.append(i[0])
+            return recorrido
+        else:
+            return 0
