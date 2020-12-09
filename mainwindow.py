@@ -46,7 +46,20 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def recorrido_amplitud(self):
-        print ('amplitud')
+        origen_x = self.ui.origen_x_spinBox.value()
+        origen_y = self.ui.origen_y_spinBox.value()
+        if not self.administrador.amplitud(self.grafo, origen_x, origen_y):
+            QMessageBox.warning(
+                self,
+                "Aviso",
+                "No es posible leer los valores"
+            )
+        else:
+            os.system("cls")
+            amplitud = self.administrador.amplitud(self.grafo, origen_x, origen_y)
+            print("Amplitud: ")
+            for i in amplitud:
+                print(i)
 
     @Slot()
     def recorrido_profundidad(self):
